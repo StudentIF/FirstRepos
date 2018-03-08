@@ -1,0 +1,16 @@
+@media screen and (min-width: 600px) {
+  body {
+    background-color: green;
+
+  }
+
+}
+
+
+@media screen and (min-width: 900px) {
+  body {
+    background-color: red;
+
+  }
+
+}

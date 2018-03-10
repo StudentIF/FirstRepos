@@ -1,53 +1,45 @@
 body {
 
-
 }
 
-.top-nav {
-  /* display: flex; */
-  background-color: lightgrey;
-}
-
-.low-nav {
-  background-color: lemonchiffon;
-}
-
-.lnav-logo {
-  border: 2px solid white ;
-  margin: 5px;
-  max-width: 100px;
-}
-
-.login {
-  margin-left:auto;
-}
-
-.main,
-.login,
-.low-nav,
-.footer ul,
-.footer ul li,
-.right_column2,
-.left_column ul li {
+.main-header,
+.posts,
+footer ul,
+footer ul li {
   display: flex;
 }
+
+.main-header {
+  background-color: lemonchiffon;
+  padding: 5px;
+  justify-content: space-around;
+}
+
+.picture {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 5px;
+}
+
+.votes {
+  min-width: 100px;
+}
+
 
 footer {
   background-color: lightcyan;
 }
 
 footer ul {
-  flex-direction: row;
-  color: purple;
-  ;
+  justify-content: space-around;
 }
 
-/* footer ul li {
-  /* flex-direction: row; */
-  /* background-color: green;
+footer ul li {
+  flex-direction: column;
   justify-content: space-around;
-
-} */ 
+  margin: 5px;
+  border: 2px solid blue;
+}
 
 a {
   margin: 0 10px;
@@ -63,22 +55,11 @@ a:visited {
 }
 
 
-.left_column ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.left_column ul li {
-  /* display: flex; */
-  justify-content: space-around;
+.posts {
   margin: 20px 0;
   background-color: lightpink;
 }
 
-
-.right_column2 {
-  flex-direction: column;
-}
 
 .login {
   /* display: flex; */

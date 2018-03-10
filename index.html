@@ -9,124 +9,36 @@
 
 	<body>
 		<header class="main-header">
+			<div>
+				<img src="img/bananas-1119790_640.jpg" alt="reddit logo" class=" logo picture">
+			</div>
 
-			<nav class="top-nav">
-        <!-- for the tons of small links at the very top  -->
+			<div>
+				<h1 class=" logo text">My Reddit</h1>
+			</div>
 
-        <a href="#target" id="popular"> POPULAR </a>
-        <a href="#target" id="all"> ALL </a>
-        <a href="#target" > RANDOM </a>
-        <a href="#target" > USERS </a>
-               |
-        <a href="#target" > ASKREDDIT </a>
-        <a href="#target" > WORLDNEWS </a>
-        <a href="#target" > VIDEOS </a>
-        <a href="#target" > FUNNY </a>
-        <a href="#target" > TODAYILEARNED </a>
-        <a href="#target" > PICS </a>
-        <a href="#target" > GAMING </a>
-        <a href="#target" > MOVIES </a>
-        <a href="#target" > NEWS </a>
-        <a href="#target" > GIFS </a>
-        <a href="#target" > MILDLYINTERESTING </a>
-        <a href="#target" > AWW </a>
+			<div>
+				<p>Login:<a href="#target">login</a><br>or<a href="#target">Sign up</a></p>
+			</div>
 
-			</nav>
-      <nav class="low-nav">
-<!-- next level down with picture and loging -->
-        <div class="lnav-logo">
-          <img src="http://placekitten.com/g/40/40" alt="reddit logo" class="n2_logo">
-          <span class="logo-text">reddit</span>
-        </div>
-
-        <nav class="lnav-links">
-          <a href="#target" > subreddits </a>
-          <a href="#target" > popular </a>
-          <a href="#target" > new </a>
-          <a href="#target" > users </a>
-        </nav>
-
-        <div>
-          <p class="login">Want to login? <a href="#target">login</a> or <a href="#target">sign up</a> in seconds.</p>
-          <p class="language">Language</p>
-        </div>
-			</nav>
+			<div>
+    		<lable for="languages">Select Language: </lable><br>
+				<select name="languages" id="languages">
+					<option>English</option>
+					<option>French</option>
+					<option>Chinese</option>
+					<option>Spanish</option>
+					<option>Suaheli</option>
+					<option>Jerriais</option>
+				</select>
+			</div>
 
 		</header>
 
     <main>
-    <div class="left_column">
-      <ul>
-        <li>
-          <div class="votes">
-            <p> voting buttons to go here</p>
-          </div>
 
-          <img src="http://placekitten.com/g/110/110" alt="item picture" class="picture">
-
-          <div class="item-details">
-            <h1>item header</h1>
-            <p>item deatils</p>
-            <a href="#target" class="number">number of comments</a>
-            <a href="#target" class="button">Comments</a>
-            <a href="#target" class="button">share</a>
-            <a href="#target" class="button">save</a>
-            <a href="#target" class="button">hide</a>
-            <a href="#target" class="button">report</a>
-            <a href="#target" class="button"></a>
-          </div>
-        </li>
-
-        <li>
-          <div class="votes">
-            <p> voting buttons to go here</p>
-          </div>
-
-          <img src="http://placekitten.com/g/110/110" alt="item picture" class="picture">
-
-          <div class="item-details">
-            <h1>item header</h1>
-            <p>item deatils</p>
-            <a href="#target" class="number">number of comments</a>
-            <a href="#target" class="button">Comments</a>
-            <a href="#target" class="button">share</a>
-            <a href="#target" class="button">save</a>
-            <a href="#target" class="button">hide</a>
-            <a href="#target" class="button">report</a>
-            <a href="#target" class="button"></a>
-          </div>
-        </li>
-        <li>
-          <div class="votes">
-            <p> voting buttons to go here</p>
-          </div>
-
-          <img src="http://placekitten.com/g/110/110" alt="item picture" class="picture">
-
-          <div class="item-details">
-            <h1>item header</h1>
-            <p>item deatils</p>
-            <a href="#target" class="number">number of comments</a>
-            <a href="#target" class="button">Comments</a>
-            <a href="#target" class="button">share</a>
-            <a href="#target" class="button">save</a>
-            <a href="#target" class="button">hide</a>
-            <a href="#target" class="button">report</a>
-            <a href="#target" class="button"></a>
-          </div>
-        </li>
-
-      </ul>
-    </div>
-
-    <div class="right_column1">
-    <!-- search box -->
-    <!-- login box -->
-      <div class="login">
-        <div>
-          <textarea name="search" rows="1" cols="40" id="txt">Search</textarea>
-        </div>
-        <div>
+			<div class="login">
+				<div>
           <lable for ="usnam">Username: </lable>
           <input type="text" name="username" id="usnam">
         </div>
@@ -135,23 +47,57 @@
           <input type="text" name="password" id="pwd">
         </div>
       </div>
-    </div>
 
-    <div class="right_column2">
-    <!-- advertising space -->
-    <!-- submit button -->
-    <!-- notes -->
-      <p>this is the rest of the right column, which contains more pictures and links.</p>
-      <img src="http://placekitten.com/g/400/400" alt="item picture" class="picture">
-      <a href="#target" > link right colunn1</a>
-      <a href="#target" > link right colunn2</a>
-      <a href="#target" > link right colunn3</a>
-      <img src="http://placekitten.com/g/380/380" alt="item picture" class="picture">
-    </div>
+			<div class="search">
+				<textarea name="search-field" rows="1" cols="40" id="txt">Search</textarea>
+			</div>
+
+			<div class="posts">
+	      <div class="votes">
+					<p>Ranking</p>
+					<input type="radio" name="vote" value="up" id="vup"> Vote Up<br>
+					<input type="radio" name="vote" value="down" id="vd"> Vote Down<br>
+	      </div>
+
+	      <img src="img/banana-2449019_640.jpg" alt="item picture" class="picture">
+
+	      <div class="item-details">
+	        <h1>item header</h1>
+	        <p> In a arcu neque. Praesent tellus purus, elementum vitae dapibus egestas, tincidunt nec nibh. Nam id tincidunt ex. Integer et vehicula eros. Phasellus mollis in elit id feugiat. In nec luctus nisl.</p>
+	        <a href="#target" >number of comments</a>
+	        <a href="#target" >Comments</a>
+	        <a href="#target" >share</a>
+	        <a href="#target" >save</a>
+	        <a href="#target" >hide</a>
+	        <a href="#target" >report</a>
+	      </div>
+	    </div>
+
+			<div class="posts">
+	      <div class="votes">
+					<p>Ranking</p>
+					<input type="radio" name="vote" value="up" id="vup"> Vote Up<br>
+					<input type="radio" name="vote" value="down" id="vd"> Vote Down<br>
+	      </div>
+
+	      <img src="img/banana-3144541_640.jpg" alt="item picture" class="picture">
+
+	      <div class="item-details">
+	        <h1>item header</h1>
+	        <p> In a arcu neque. Praesent tellus purus, elementum vitae dapibus egestas, tincidunt nec nibh. Nam id tincidunt ex. Integer et vehicula eros. Phasellus mollis in elit id feugiat. In nec luctus nisl.</p>
+	        <a href="#target" >number of comments</a>
+	        <a href="#target" >Comments</a>
+	        <a href="#target" >share</a>
+	        <a href="#target" >save</a>
+	        <a href="#target" >hide</a>
+	        <a href="#target" >report</a>
+	      </div>
+	    </div>
+
     </main>
 
     <footer>
-      <ul>
+      <ul class="footer_links">
         <li>
           <h2 class="f_text">About</h2>
           <a href="#target" > footer link1</a>
@@ -184,8 +130,8 @@
           <a href="#target" > footer link4</a>
         </li>
       </ul>
-      <p class="low_f_text">Use of this site constitutes acceptance of our <a>User Agreement</a> and <a>Privacy Policy</a>. © 2018 reddit inc. All rights reserved.
-REDDIT and the ALIEN Logo are registered trademarks of reddit inc. </p>
+
+      <p class="footer_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur facilisis eget ipsum id commodo. Integer feugiat tempor risus. Donec et enim felis. Etiam tempor nibh porttitor, consectetur felis sit amet, feugiat massa. Fusce neque purus, malesuada id euismod at, tempus at metus. Etiam placerat neque in lacus faucibus semper. Praesent quis nisi ipsum.</p>
     </footer>
 
 	</body>

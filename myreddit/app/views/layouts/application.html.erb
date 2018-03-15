@@ -5,10 +5,85 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!--  stylesheet_link_tag    'Basic_Style.css' , 'Media_Style.css'  -->
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <header class="main-header">
+			<div>
+				<!-- <img src="img/bananas-1119790_640.jpg" alt="reddit logo" class=" logo picture"> -->
+
+       <%= image_tag 'bananas-1119790_640.jpg' , :class => "logo picture" %>
+
+			</div>
+
+			<div>
+				<h1 class=" logo text">My Reddit</h1>
+			</div>
+
+			<div>
+				<p>Login:<a href="#target">login</a><br>or<a href="#target">Sign up</a></p>
+			</div>
+
+			<div>
+    		<lable for="languages">Select Language: </lable><br>
+				<select name="languages" id="languages">
+					<option>English</option>
+					<option>French</option>
+					<option>Chinese</option>
+					<option>Spanish</option>
+					<option>Suaheli</option>
+					<option>Jerriais</option>
+				</select>
+			</div>
+
+		</header>
+
+
     <%= yield %>
+
+
+    <footer>
+      <ul class="footer_links">
+        <li>
+          <h2 class="f_text">About</h2>
+          <a href="#target" > footer link1</a>
+          <a href="#target" > footer link2</a>
+          <a href="#target" > footer link3</a>
+          <a href="#target" > footer link4</a>
+        </li>
+
+        <li>
+          <h2 class="f_text">Help</h2>
+          <a href="#target" > footer link1</a>
+          <a href="#target" > footer link2</a>
+          <a href="#target" > footer link3</a>
+          <a href="#target" > footer link4</a>
+        </li>
+
+        <li>
+          <h2 class="f_text">Apps & tools</h2>
+          <a href="#target" > footer link1</a>
+          <a href="#target" > footer link2</a>
+          <a href="#target" > footer link3</a>
+          <a href="#target" > footer link4</a>
+        </li>
+
+        <li>
+          <h2 class="f_text">LT 3</h2>
+          <a href="#target" > footer link1</a>
+          <a href="#target" > footer link2</a>
+          <a href="#target" > footer link3</a>
+          <a href="#target" > footer link4</a>
+        </li>
+      </ul>
+
+      <p class="footer_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur facilisis eget ipsum id commodo. Integer feugiat tempor risus. Donec et enim felis. Etiam tempor nibh porttitor, consectetur felis sit amet, feugiat massa. Fusce neque purus, malesuada id euismod at, tempus at metus. Etiam placerat neque in lacus faucibus semper. Praesent quis nisi ipsum.</p>
+    </footer>
+
+
   </body>
 </html>

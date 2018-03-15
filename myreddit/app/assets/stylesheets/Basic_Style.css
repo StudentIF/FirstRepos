@@ -1,0 +1,71 @@
+body {
+
+}
+
+.main-header,
+.posts,
+footer ul,
+footer ul li {
+  display: flex;
+}
+
+.main-header {
+  background-color: lemonchiffon;
+  padding: 5px;
+  justify-content: space-around;
+}
+
+.picture {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 5px;
+}
+
+.votes {
+  min-width: 100px;
+}
+
+
+footer {
+  background-color: lightcyan;
+}
+
+footer ul {
+  justify-content: space-around;
+}
+
+footer ul li {
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 5px;
+  border: 2px solid blue;
+}
+
+a {
+  margin: 0 10px;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+
+a:visited {
+  color: grey;
+}
+
+
+.posts {
+  margin: 20px 0;
+  background-color: lightpink;
+}
+
+
+.login {
+  /* display: flex; */
+  flex-direction: column;
+  background-color: palegreen;
+  border: 1px solid green;
+  padding:10px 10px;
+  margin: 10px 10px;
+}

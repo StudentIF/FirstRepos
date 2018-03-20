@@ -1,0 +1,18 @@
+<div>
+  <strong>Comment:</strong>
+  <!-- <p>  here is some text just to see that it ends up on the screen </p> -->
+
+  <%= comment.text %>
+
+  <div class="comment-admin">
+    <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
+    <%= link_to "Delete", [@post, comment] , method: :delete %>
+    <br>
+    <br>
+
+  </div>
+
+
+
+
+</div>

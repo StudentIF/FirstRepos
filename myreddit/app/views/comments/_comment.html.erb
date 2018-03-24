@@ -1,8 +1,13 @@
 <div>
-  <strong>Comment:</strong>
+  <strong>Comment: </strong>
   <!-- <p>  here is some text just to see that it ends up on the screen </p> -->
-
   <%= comment.text %>
+
+  <p>
+    <strong>Comment created by:</strong>
+    <%= comment.user.username %>
+  </p>
+
 
   <div class="comment-admin">
     <%= link_to "Edit", edit_post_comment_path(@post, comment) %>

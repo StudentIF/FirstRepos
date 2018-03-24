@@ -16,8 +16,13 @@
 </p>
 
 <p>
-  <strong>post created:</strong>
+  <strong>Post created:</strong>
   <%= time_ago_in_words(@post.created_at) %>
+</p>
+
+<p>
+  <strong>Post created by:</strong>
+  <%= @post.user.username %>
 </p>
 
 

@@ -8,15 +8,14 @@
     <%= comment.user.username %>
   </p>
 
-
-  <div class="comment-admin">
-    <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
-    <%= link_to "Delete", [@post, comment] , method: :delete %>
-    <br>
-    <br>
-
-  </div>
-
+  <% if current_user == comment.user  %>
+    <div class="comment-admin">
+      <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
+      <%= link_to "Delete", [@post, comment] , method: :delete %>
+      <br>
+      <br>
+    </div>
+  <% end %>
 
 
 

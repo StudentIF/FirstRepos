@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /comments
   # GET /comments.json
@@ -12,8 +12,8 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
-     @comment = Comment.find(post_id=[:id])
-    # render text: params[:id]
+    # @comment = Comment.find(post_id=[:id])
+    # this is done in hte before_action :set_comment, which is definied at the bottom of the controller in the private section
   end
 
   # GET /comments/new
@@ -34,50 +34,33 @@ class CommentsController < ApplicationController
     if comment.save
       redirect_to @post, notice: 'Comment was successfully created.'
     else
-      redirect_to @post, notice: 'There was a problem with the comment,not created.' 
+      redirect_to @post, notice: 'There was a problem with the comment,not created.'
     end
-
-
-    # respond_to do |format|
-    #   if @comment.save
-    #     format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-    #     format.json { render :show, status: :created, location: @comment }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @comment.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
-    @comment = Comment.find(params[:id])
     @comment.update(comment_params)
     redirect_to @post , notice: 'This comment has been updated'
-
-    # respond_to do |format|
-    #   if @comment.update(comment_params)
-    #     format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @comment }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @comment.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to @post , notice: 'Comment deleted as requested'
+  end
 
-    # respond_to do |format|
-    #   format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
+
+  def upvote
+    @comment.liked_by current_user
+    redirect_to @post
+  end
+
+  def downvote
+    @comment.downvote_from current_user
+    redirect_to @post
   end
 
   private

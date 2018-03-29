@@ -1,19 +1,22 @@
-<div>
-  <strong>Comment: </strong>
+<div class=comment-list >
+  <strong>Comment:  </strong>
   <!-- <p>  here is some text just to see that it ends up on the screen </p> -->
   <%= comment.text %>
 
-  <p>
-    <strong>Comment created by:</strong>
-    <%= comment.user.username %>
-  </p>
+  <em> Comment created by: </em>
+  <%= comment.user.username %>
+
+  <div class= "comm-votes">
+    <%= link_to "Upvote" , like_post_comment_path(@post, comment), method: :put %>
+    <%= comment.get_upvotes.size %>
+    <%= link_to "Downvote" , dislike_post_comment_path(@post, comment), method: :put %>
+    <%= comment.get_downvotes.size %>
+  </div>
 
   <% if current_user == comment.user  %>
     <div class="comment-admin">
       <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
       <%= link_to "Delete", [@post, comment] , method: :delete %>
-      <br>
-      <br>
     </div>
   <% end %>
 

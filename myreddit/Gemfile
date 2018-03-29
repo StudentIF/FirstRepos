@@ -57,5 +57,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise'
 
+# https://github.com/ryanto/acts_as_votable
+# Acts As Votable is a Ruby Gem specifically written for Rails/ActiveRecord models.
+gem 'acts_as_votable', '~> 0.11.1'
+
 # to hang proper sql db behind the application, needs lots of extra config.
 # gem 'mysql2'

@@ -28,15 +28,15 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @post = Post.find(params[:post_id])
-    # @comment = @post.comments.create(comment_params)
 
-    #   this doesn't work either
-    # @comment = Comment.new(comment_params)
-    # @comment.update(post_id: :post_id , user_id: current_user.id)
-    # @comment.save
+    comment = @post.comments.new(comment_params.merge(user_id: current_user.id))
 
-    comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
-    redirect_to @post
+    if comment.save
+      redirect_to @post, notice: 'Comment was successfully created.'
+    else
+      redirect_to @post, notice: 'There was a problem with the comment,not created.' 
+    end
+
 
     # respond_to do |format|
     #   if @comment.save
@@ -93,7 +93,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:text, :user_id)
-      # Comment.user_id = current_user.id
+      params.require(:comment).permit(:text)
     end
 end

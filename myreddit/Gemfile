@@ -61,5 +61,9 @@ gem 'devise'
 # Acts As Votable is a Ruby Gem specifically written for Rails/ActiveRecord models.
 gem 'acts_as_votable', '~> 0.11.1'
 
+# https://github.com/CanCanCommunity/cancancan
+# CanCanCan is an authorization library for Ruby >= 2.2.0 and Ruby on Rails >= 4.2 which restricts what resources a given user is allowed to access.
+gem 'cancancan', '~> 2.0'
+
 # to hang proper sql db behind the application, needs lots of extra config.
 # gem 'mysql2'

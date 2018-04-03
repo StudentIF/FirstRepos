@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_comment, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-
+  load_and_authorize_resource
+  
   # GET /comments
   # GET /comments.json
   def index

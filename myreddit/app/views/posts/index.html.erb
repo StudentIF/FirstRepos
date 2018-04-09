@@ -3,12 +3,18 @@
 <h1>Posts</h1>
 <p> here is some random text </p>
 
+<% if @posts.blank? %>
+  <h4>There are no posts containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
+      <% if @posts.present? %>
+        <th>Title</th>
+        <th>Content</th>
+        <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 

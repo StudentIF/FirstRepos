@@ -8,7 +8,12 @@ class PostsController < ApplicationController
   def index
     # @posts = Post.all
     # @posts = Post.all.sort_by{|p| p.votes_for.size}   is just number of votes, regardless of up or down.
-    @posts = Post.all.sort_by{|p| p.get_dislikes.size - p.get_likes.size}
+
+    if params[:search]
+      @posts = Post.search(params[:search]).sort_by{|p| p.get_dislikes.size - p.get_likes.size}
+    else
+      @posts = Post.all.sort_by{|p| p.get_dislikes.size - p.get_likes.size}
+    end
     # this would be useful with pagination as opposed to reading in the whole file.
 
   end

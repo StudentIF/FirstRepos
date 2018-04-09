@@ -35,11 +35,12 @@
 
 <div id="comments" >
 
-   <!-- add if comments present check here and only dispay if there.  Maybe...  -->
-
-  <h3> Comments.... xxx</h3>
-  <!-- < %= render @post.comments %> -->
-  <%= render @post.comments.sort_by{|c| c.get_dislikes.size - c.get_likes.size} %>
+   <!-- only display header if there are any comments for this post  -->
+  <% if @post.comments.exists?(:post_id => @post.id )  %>
+    <h3> Comments.... xxx</h3>
+    <!-- < %= render @post.comments %> -->
+    <%= render @post.comments.sort_by{|c| c.get_dislikes.size - c.get_likes.size} %>
+  <% end %>
 
   <h3> Add a Comment </h3>
   <%= render partial: "comments/myform" , locals: {comment: @post.comments.new} %>

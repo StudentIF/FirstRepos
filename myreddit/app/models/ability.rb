@@ -10,6 +10,7 @@ class Ability
         # additional permissions for logged in users (they can manage their posts)
         can :manage, Post, user_id: user.id
         can :manage, User, user_id: user.id
+        can :manage, Comment, user_id: user.id
         # can :session, :all
         if user.admin?
           # additional permissions for administrators

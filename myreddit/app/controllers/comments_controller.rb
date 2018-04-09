@@ -1,19 +1,18 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :set_comment, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :set_comment, except: [:index, :create]
+  # before_action :set_comment, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+
   before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-  load_and_authorize_resource
-  
+  load_and_authorize_resource  # prmissions
+
   # GET /comments
-  # GET /comments.json
   def index
     @comments = Comment.all
   end
 
   # GET /comments/1
-  # GET /comments/1.json
   def show
-    # @comment = Comment.find(post_id=[:id])
     # this is done in hte before_action :set_comment, which is definied at the bottom of the controller in the private section
   end
 
@@ -26,7 +25,6 @@ class CommentsController < ApplicationController
   end
 
   # POST /comments
-  # POST /comments.json
   def create
     @post = Post.find(params[:post_id])
 
@@ -40,14 +38,12 @@ class CommentsController < ApplicationController
   end
 
   # PATCH/PUT /comments/1
-  # PATCH/PUT /comments/1.json
   def update
     @comment.update(comment_params)
     redirect_to @post , notice: 'This comment has been updated'
   end
 
   # DELETE /comments/1
-  # DELETE /comments/1.json
   def destroy
     @comment.destroy
     redirect_to @post , notice: 'Comment deleted as requested'

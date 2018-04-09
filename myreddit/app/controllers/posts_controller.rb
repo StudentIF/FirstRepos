@@ -3,15 +3,17 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote ]
   load_and_authorize_resource
-  
+
   # GET /posts
-  # GET /posts.json
   def index
-    @posts = Post.all
+    # @posts = Post.all
+    # @posts = Post.all.sort_by{|p| p.votes_for.size}   is just number of votes, regardless of up or down.
+    @posts = Post.all.sort_by{|p| p.get_dislikes.size - p.get_likes.size}
+    # this would be useful with pagination as opposed to reading in the whole file.
+
   end
 
   # GET /posts/1
-  # GET /posts/1.json
   def show
   end
 
@@ -25,7 +27,6 @@ class PostsController < ApplicationController
   end
 
   # POST /posts
-  # POST /posts.json
   def create
     # @post = Post.new(post_params)
     # @post.user_id = current_user.id
@@ -34,14 +35,14 @@ class PostsController < ApplicationController
 
 
     if @post.save
-        redirect_to @post, notice: 'Post was successfully created.'
+        # redirect_to @post, notice: 'Post was successfully created.'   shorthand for the below.
+        redirect_to post_path(@post.id), notice: 'Post was successfully created.'
     else
         render :new
     end
   end
 
   # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
       if @post.update(post_params)
@@ -55,7 +56,6 @@ class PostsController < ApplicationController
   end
 
   # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post.destroy
     respond_to do |format|
